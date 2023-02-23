@@ -1,8 +1,3 @@
-# curriculum-databases-projects-template
-
-> This template should be used for database related projects at Microverse.
-> Generate your own repository, update this README and edit all files content while working on projects. You should not be adding any new files unless asked otherwise.
-
 ## Getting Started
 
 <a name="readme-top"></a>
@@ -55,7 +50,7 @@ After you're finished please remove all the comments and instructions!
 
 <!-- PROJECT DESCRIPTION -->
 
-# 📖 [your_project_name] <a name="about-project"></a>
+# 📖 Rails_Blogs_App <a name="about-project"></a>
 
 > Describe your project in 1 or 2 sentences.
 
