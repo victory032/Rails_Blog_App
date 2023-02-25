@@ -10,6 +10,9 @@
 # Ignore node_modules config
 node_modules/
 
+# Ignore vendor config
+vendor/
+
 # Ignore all logfiles and tempfiles.
 /log/*
 /tmp/*
