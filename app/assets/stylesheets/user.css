@@ -1,0 +1,77 @@
+html {
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  font-size: 16px;
+  line-height: 1.5;
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+}
+
+a {
+  color: #007bff;
+  text-decoration: none;
+}
+
+h1 {
+  text-align: center;
+  font-size: 2rem;
+  margin: 1rem 0;
+}
+
+.container {
+  width: 90%;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+.users-list {
+  list-style: none;
+}
+
+.user-details {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.user-image {
+  margin-right: 1rem;
+  width: 35mm;
+  height: 45mm;
+  border: 1px solid black;
+}
+
+.user-name-and-post {
+  width: 90%;
+  height: 40mm;
+  display: flex;
+  flex-direction: column;
+  border: 1px solid black;
+}
+
+.user-name {
+  font-size: 1.3rem;
+  margin-bottom: 0.5rem;
+  padding: 2rem 0 0 2rem;
+}
+
+.number-of-posts {
+  font-size: 1rem;
+  color: gray;
+  align-self: flex-end;
+  padding-right: 2rem;
+}
