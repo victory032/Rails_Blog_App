@@ -1,14 +1,14 @@
-<div class='container'>
+<main class='container'>
   <h1>Here is a list of users</h1>
-  <ul class='user-list'>
-    <% @users.each do |user| %>
-      <li class='user-details'>
-        <div class='user-image'><%= image_tag user.photo %> </div>
-        <div class='user-name-and-post'>
-          <h2 class='user-name'><%= link_to user.name, user %></h2>
-          <p class='number-of-posts'>Number of posts: <%= user.posts.count %> </p>
-        </div>
-      </li>
-    <% end %>
-  </ul>
-</div>
+  <% if @users.empty? %>
+    <p class="empty-message">There are no users in database!!!</p>
+  <% else %>
+    <ul class='user-list'>
+      <% @users.each do |user| %>
+        <%= link_to "/users" do %>
+          <%= render user %>
+        <% end %>
+      <% end %>
+    </ul>
+  <% end %>
+</main>
