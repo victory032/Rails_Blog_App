@@ -1,1 +1,10 @@
-<h3>Here is a single post of a given user</h3>
+<div style="width:90%; margin-top: 2rem;">
+  <%= render @post %>
+  <% unless @post.comments.empty? %>
+    <h4 class="users-comments">
+      <% @post.comments.each do |comment| %>
+        <%= "#{comment.author.name}: #{comment.text}" %><br>
+      <% end %>
+    </h4>
+  <% end %>
+</div>
