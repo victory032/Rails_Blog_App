@@ -1,0 +1,13 @@
+<article class='post'>
+  <% if @user==nil%>
+    <h3 class='post-title'><%= "Post ##{post.id} by #{post.author.name}"%></h3>
+    <p class='post-text'><%= post.text %></p>
+  <% else %>
+    <h3 class='post-title'><%= link_to_unless_current "Post##{post.id}", user_post_path(@user, post)%></h3>
+    <p><%= truncate(post.text, length: 200, separator: ' ', omission: '...') %></p>
+  <%end%>
+  <div class='post-comments-likes'>
+    <span class='post-comments-count'>Comments: <%= post.comments.count%></span>
+    <span class='post-likes-count'>&nbsp;&nbsp;&nbsp;Likes: <%= post.likes.count%></span>
+  </div>
+</article>
