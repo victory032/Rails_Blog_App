@@ -78,3 +78,5 @@ group :development, :test do
   gem 'rspec-rails'
   gem 'shoulda-matchers'
 end
+
+gem 'htmlbeautifier'

@@ -1,1 +1,15 @@
-<h2>Here is a single user</h2>
+<section class='user'>
+  <%= render @user %>
+  <div class='user-bio'>
+    <h3 class='user-bio-title'>Bio</h3>
+    <p class='user-bio-text'><%= @user.bio %></p>
+  </div>
+  <% if @user.posts.empty? %>
+    <p class="empty-message">This user has not written any posts!!!</p>
+  <% else %>
+    <% @user.recent_posts.each do |post| %>
+      <%= render post%>
+    <% end %>
+    <%= link_to "See all posts", user_posts_path(@user), class: "button" %>
+  <% end%>
+</section>
