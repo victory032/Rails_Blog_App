@@ -1,1 +1,18 @@
-<h3>Here is a list of posts for given user</h3>
+<div class="user-posts">
+  <%= render @user %>
+  <% if @user.posts.empty? %>
+    <p class="empty-message">This user has not written any posts!!!</p>
+  <% else %>
+    <% @user.posts.each do |post| %>
+      <%= render post%>
+      <% unless post.recent_comments.empty? %>
+        <h4 class="users-comments">
+          <% post.recent_comments.each do |comment| %>
+            <%= "#{comment.author.name}: #{comment.text}" %><br>
+          <% end %>
+        </h4>
+      <% end %>
+    <% end %>
+    <%= link_to "Pagination", user_posts_path(@user), class: "button" %>
+  <% end%>
+</div>
