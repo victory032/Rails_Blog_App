@@ -1,5 +1,9 @@
 <div style="width:90%; margin-top: 2rem;">
   <%= render @post %>
+  <div class="actions">
+    <%= link_to 'Add a new comment', new_user_post_comment_path(@user, @post), class: 'actions__button' %>
+    <%= button_to 'Like', user_post_likes_path(@user, @post), method: :post, class: 'actions__button' %>
+  </div>
   <% unless @post.comments.empty? %>
     <h4 class="users-comments">
       <% @post.comments.each do |comment| %>
