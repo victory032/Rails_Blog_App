@@ -1,5 +1,13 @@
 <div class="user-posts">
   <%= render @user %>
+  <% if flash[:success] %>
+    <div class="alert alert-success">
+      <%= flash[:success] %>
+    </div>
+  <% end %>
+  <p>
+    <%= link_to "Creat New post", new_user_post_path %>
+  </p>
   <% if @user.posts.empty? %>
     <p class="empty-message">This user has not written any posts!!!</p>
   <% else %>
