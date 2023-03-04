@@ -1,0 +1,47 @@
+.alert {
+  padding: 1em;
+  margin-bottom: 1em;
+  border-radius: 0.25rem;
+}
+
+.alert-error {
+  background-color: #f8d7da;
+  border-color: #f5c6cb;
+  color: #721c24;
+}
+
+.create-post {
+  margin-top: 1em;
+}
+
+label {
+  display: block;
+  margin-bottom: 0.5em;
+  font-weight: bold;
+}
+
+input[type="text"],
+textarea {
+  display: block;
+  width: 100%;
+  padding: 0.5em;
+  margin-bottom: 1em;
+  border: 1px solid #ccc;
+  border-radius: 0.25rem;
+}
+
+input[type="submit"],
+.actions__button {
+  display: block;
+  padding: 0.5em;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 0.25rem;
+  cursor: pointer;
+}
+
+input[type="submit"]:hover,
+.actions__button:hover {
+  background-color: #0069d9;
+}
