@@ -1,0 +1,17 @@
+<div>
+  <h1>Create a new post</h1>
+  <% if flash[:error] %>
+    <div class="alert alert-error">
+      <%= flash[:error] %>
+    </div>
+  <% end %>
+  <div class='create-post'>
+    <%= form_with model: @post, url: user_posts_path, method: :post, data: { turbo: false } do |form| %>
+      <%= form.label :title, 'Title' %>
+      <%= form.text_field :title %>
+      <%= form.label :text, 'Text' %>
+      <%= form.text_area :text %>
+      <%= form.submit %>
+    <% end %>
+  </div>
+</div>
