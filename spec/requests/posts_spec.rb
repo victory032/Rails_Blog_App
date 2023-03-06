@@ -2,28 +2,44 @@ require 'rails_helper'
 
 RSpec.describe 'Posts', type: :request do
   describe 'GET /index' do
-    let(:user) { User.create!(name: 'Alice', post_counter: 0) }
+    let(:user) { User.create!(name: 'John Doe', photo: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcROWm_741qaM08Rn2xI5WTsmgSnwbgkoDdhrg&usqp=CAU',bio: "This is John Doe. He is a good man.", post_counter: 0) }
+
+    let!(:post1) do
+      user.posts.create!(title: 'Post 1', text: 'Body 1', comments_counter: 0, likes_counter: 0, created_at: 1.day.ago)
+    end
+    let!(:post2) do
+      user.posts.create!(title: 'Post 2', text: 'Body 2', comments_counter: 0, likes_counter: 0, created_at: 2.days.ago)
+    end
+
     it 'displays a list of all posts' do
-      # get user_posts_path(user)
-      get '/users/1/posts'
+      get user_posts_path(user)
       expect(response).to be_successful
-      expect(response.body).to include('Here is a list of posts')
+      expect(response.body).to include(post1.text)
+      expect(response.body).to include(post2.text)
     end
     it 'renders the index template' do
       get user_posts_path(user)
       expect(response).to render_template('index')
     end
+
+    it 'displays pagination links when there are more than 10 posts' do
+      10.times do
+        user.posts.create!(title: 'Post', text: 'Body', comments_counter: 0, likes_counter: 0)
+      end
+      get user_posts_path(user)
+      expect(response.body).to include('Pagination')
+    end
   end
 
   describe 'GET /show' do
-    let(:user) { User.create!(name: 'Alice', post_counter: 0) }
+    let(:user) { User.create!(name: 'John Doe', photo: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcROWm_741qaM08Rn2xI5WTsmgSnwbgkoDdhrg&usqp=CAU',bio: "This is John Doe. He is a good man.", post_counter: 0) }
     let(:post) do
       user.posts.create!(title: 'Post 1', text: 'Body 1', comments_counter: 0, likes_counter: 0, created_at: 1.day.ago)
     end
-    it "displays the post's title and body" do
-      get '/users/1/posts/1'
+    it "displays the post's text" do
+      get user_post_path(user, post)
       expect(response).to be_successful
-      expect(response.body).to include('Here is a single post')
+      expect(response.body).to include(post.text)
     end
     it 'renders the show template' do
       get user_post_path(user, post)
