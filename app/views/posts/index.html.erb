@@ -5,13 +5,13 @@
       <%= flash[:success] %>
     </div>
   <% end %>
-  <p>
+  <div>
     <%= link_to "Creat New post", new_user_post_path %>
-  </p>
+  </div>
   <% if @user.posts.empty? %>
     <p class="empty-message">This user has not written any posts!!!</p>
   <% else %>
-    <% @user.posts.includes(:author).each do |post| %>
+    <% @posts.includes(:author).each do |post| %>
       <%= render post%>
       <% unless post.recent_comments.empty? %>
         <h4 class="users-comments">
@@ -21,6 +21,6 @@
         </h4>
       <% end %>
     <% end %>
-    <%= link_to "Pagination", user_posts_path(@user), class: "button" %>
+    <%= will_paginate @posts %>
   <% end%>
 </div>
