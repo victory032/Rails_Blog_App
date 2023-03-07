@@ -80,3 +80,6 @@ group :development, :test do
 end
 
 gem 'htmlbeautifier'
+
+gem 'will_paginate', '~> 3.3.0'
+
