@@ -14,7 +14,7 @@ RSpec.describe 'Users', type: :request do
   end
 
   describe 'GET /show' do
-    let(:user) { User.create!(name: 'John Doe', photo: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcROWm_741qaM08Rn2xI5WTsmgSnwbgkoDdhrg&usqp=CAU',bio: "This is John Doe. He is a good man.", post_counter: 0) }
+    let(:user) { User.create!(name: 'John Doe', photo: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcROWm_741qaM08Rn2xI5WTsmgSnwbgkoDdhrg&usqp=CAU', bio: 'This is John Doe. He is a good man.', post_counter: 0) }
 
     it "displays the user's name" do
       get user_path(user)

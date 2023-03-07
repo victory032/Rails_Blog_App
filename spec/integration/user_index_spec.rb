@@ -4,7 +4,7 @@ RSpec.describe 'Users', type: :system do
   fixtures :users
   let(:user1) { users(:one) }
   let(:user2) { users(:two) }
-  let(:user3) {users(:three) }
+  let(:user3) { users(:three) }
   describe 'index page' do
     it 'can see the username of all other users' do
       visit users_path
@@ -29,7 +29,7 @@ RSpec.describe 'Users', type: :system do
       visit users_path
       expect(page).to have_link(user.name, href: user_path(user))
       click_link user.name
-      expect(current_path).to eq("/users" || user_path(user))
+      expect(current_path).to eq('/users' || user_path(user))
     end
   end
 end

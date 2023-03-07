@@ -2,20 +2,22 @@ require 'rails_helper'
 
 RSpec.describe 'Posts', type: :request do
   describe 'GET /index' do
-    let(:user) { User.create!(name: 'John Doe', photo: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcROWm_741qaM08Rn2xI5WTsmgSnwbgkoDdhrg&usqp=CAU',bio: "This is John Doe. He is a good man.", post_counter: 0) }
+    let(:user) { User.create!(name: 'John Doe', photo: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcROWm_741qaM08Rn2xI5WTsmgSnwbgkoDdhrg&usqp=CAU', bio: 'This is John Doe. He is a good man.', post_counter: 0) }
 
     let!(:post1) do
-      user.posts.create!(title: 'Post 1', text: 'This is the first post of the user.', comments_counter: 0, likes_counter: 0)
+      user.posts.create!(title: 'Post 1', text: 'This is the first post of the user.', comments_counter: 0,
+                         likes_counter: 0)
     end
     let!(:post2) do
-      user.posts.create!(title: 'Post 2', text: 'This is the first post of the user.', comments_counter: 0, likes_counter: 0)
+      user.posts.create!(title: 'Post 2', text: 'This is the first post of the user.', comments_counter: 0,
+                         likes_counter: 0)
     end
 
     it 'displays a list of all posts' do
       get user_posts_path(user)
       expect(response).to be_successful
       user.posts.each do |post|
-      expect(response.body).to include(post.text)
+        expect(response.body).to include(post.text)
       end
     end
     it 'renders the index template' do
@@ -33,7 +35,7 @@ RSpec.describe 'Posts', type: :request do
   end
 
   describe 'GET /show' do
-    let(:user) { User.create!(name: 'John Doe', photo: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcROWm_741qaM08Rn2xI5WTsmgSnwbgkoDdhrg&usqp=CAU',bio: "This is John Doe. He is a good man.", post_counter: 0) }
+    let(:user) { User.create!(name: 'John Doe', photo: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcROWm_741qaM08Rn2xI5WTsmgSnwbgkoDdhrg&usqp=CAU', bio: 'This is John Doe. He is a good man.', post_counter: 0) }
     let(:post) do
       user.posts.create!(title: 'Post 1', text: 'Body 1', comments_counter: 0, likes_counter: 0, created_at: 1.day.ago)
     end
