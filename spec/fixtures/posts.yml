@@ -1,0 +1,47 @@
+post1:
+  id: 1
+  author_id: 1
+  title: post 1
+  text: This is the first post of the user.
+  comments_counter: 0
+  likes_counter: 0
+
+post2:
+  id: 2
+  author_id: 1
+  title: post 2
+  text: This is the first post of the user.
+  comments_counter: 0
+  likes_counter: 0
+
+post3:
+  id: 3
+  author_id: 1
+  title: post 3
+  text: This is the first post of the user.
+  comments_counter: 0
+  likes_counter: 0
+
+post4:
+  id: 4
+  author_id: 1
+  title: post 4
+  text: This is the first post of the user.
+  comments_counter: 0
+  likes_counter: 0
+
+post5:
+  id: 5
+  author_id: 1
+  title: post 5
+  text: This is the first post of the user.
+  comments_counter: 0
+  likes_counter: 0
+
+post6:
+  id: 6
+  author_id: 1
+  title: post 6
+  text: This is the first post of the user.
+  comments_counter: 0
+  likes_counter: 0
