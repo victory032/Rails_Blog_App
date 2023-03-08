@@ -4,7 +4,7 @@
     <p class="empty-message">There are no users in database!!!</p>
   <% else %>
     <ul class='user-list'>
-      <% @users.each do |user| %>
+      <% @users.includes(:posts).each do |user| %>
         <%= link_to "/users" do %>
           <%= render user %>
         <% end %>

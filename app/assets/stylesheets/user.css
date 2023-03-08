@@ -107,6 +107,7 @@ h1 {
 
 .post-comments-likes {
   align-self: flex-end;
+  padding-bottom: 1rem;
 }
 
 .button {
@@ -148,4 +149,42 @@ h1 {
   margin-bottom: 1rem;
   border: 1px solid transparent;
   border-radius: 0.25rem;
+}
+
+/* pagination styling */
+
+.pagination {
+  display: flex;
+  margin-bottom: 1rem;
+  justify-content: center;
+}
+
+.pagination a {
+  color: black;
+  float: left;
+  padding: 8px 16px;
+  text-decoration: none;
+  margin: 2rem 0;
+}
+
+.pagination a:hover:not(.active) {
+  background-color: #007bff;
+}
+
+.pagination .disabled {
+  color: #bbb;
+  pointer-events: none;
+}
+
+.pagination .previous,
+.pagination .next {
+  color: black;
+  display: inline-block;
+  padding: 8px 16px;
+}
+
+.pagination .previous.disabled,
+.pagination .next.disabled {
+  color: #bbb;
+  pointer-events: none;
 }

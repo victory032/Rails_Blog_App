@@ -1,0 +1,20 @@
+one:
+  id: 1
+  name: John Doe
+  photo: https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcROWm_741qaM08Rn2xI5WTsmgSnwbgkoDdhrg&usqp=CAU
+  bio: This is John Doe. He is a good man.
+  post_counter: 6
+
+two:
+  id: 2
+  name: Jane Smith
+  photo: https://www.pngall.com/wp-content/uploads/12/Avatar-Profile-PNG-Photo.png
+  bio: This is John Doe. He is a good man.
+  post_counter: 0
+
+three:
+  id: 3
+  name: Gina Beki
+  photo: "https://png.pngtree.com/png-vector/20190710/ourmid/pngtree-user-vector-avatar-png-image_1541962.jpg"
+  bio: This is Gina Beki. He is a good women.
+  post_counter: 0
