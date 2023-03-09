@@ -1,5 +1,5 @@
 <article class='post'>
-  <h3 class='post-title'><%= link_to_unless_current "Post##{post.id}", user_post_path(@user, post)%></h3>
+  <h3 class='post-title'><%= link_to_unless_current "#{post.title}", user_post_path(@user, post)%></h3>
   <p><%= truncate(post.text, length: 200, separator: ' ', omission: '...') %></p>
   <div class='post-comments-likes'>
     <span class='post-comments-count'>Comments: <%= post.comments.count%></span>
