@@ -58,7 +58,7 @@ h1 {
   font-size: 18px;
   gap: 2rem;
   min-width: 100%;
-  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.7);
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.7);
 }
 
 .navbar-link {
