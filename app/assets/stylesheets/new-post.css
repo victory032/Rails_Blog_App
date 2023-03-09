@@ -14,14 +14,14 @@
   margin-top: 1em;
 }
 
-label {
+.post_label {
   display: block;
   margin-bottom: 0.5em;
   font-weight: bold;
 }
 
-input[type="text"],
-textarea {
+.post_title,
+.post_textarea {
   display: block;
   width: 100%;
   padding: 0.5em;
