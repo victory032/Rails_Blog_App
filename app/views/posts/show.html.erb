@@ -1,6 +1,9 @@
 <div style="width:90%; margin-top: 2rem;">
   <%= render partial: "posts/post_details", locals: {post: @post} %>
   <div class="actions">
+    <% if can? :destroy, @post %>
+      <%= button_to 'Delete post', user_post_path(@post.author, @post), method: :delete, class: 'actions__button' %>
+    <% end %>
     <%= link_to 'Add a new comment', new_user_post_comment_path(@user, @post), class: 'actions__button' %>
     <%= button_to 'Like', user_post_likes_path(@user, @post), method: :post, class: 'actions__button' %>
   </div>
@@ -8,6 +11,10 @@
     <h4 class="users-comments">
       <% @post.comments.includes(:post).each do |comment| %>
         <%= "#{comment.author.name}: #{comment.text}" %><br>
+        <% if can? :destroy, comment %>
+          <%= button_to 'Delete comment', user_post_comment_path(comment.author, @post, comment ), method: :delete, class: 'actions__button' %>
+        <% end %>
+        <br>
       <% end %>
     </h4>
   <% end %>

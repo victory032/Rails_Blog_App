@@ -79,6 +79,15 @@ h1 {
   background-color: #5a6660;
 }
 
+.alert,
+.notice {
+  margin: 4rem 0 -4rem 0;
+}
+
 .alert {
   color: red;
+}
+
+.notice {
+  color: green;
 }

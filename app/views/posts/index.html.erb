@@ -5,9 +5,11 @@
       <%= flash[:success] %>
     </div>
   <% end %>
-  <div>
-    <%= link_to "Creat New post", new_user_post_path %>
-  </div>
+  <% if @user == current_user %>
+    <div>
+      <%= link_to "Creat New post", new_user_post_path %>
+    </div>
+  <% end %>
   <% if @user.posts.empty? %>
     <p class="empty-message">This user has not written any posts!!!</p>
   <% else %>
