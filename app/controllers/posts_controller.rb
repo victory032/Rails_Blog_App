@@ -18,7 +18,6 @@ class PostsController < ApplicationController
     return if current_user.id == user_id
 
     authorize! :create, @post
-
   end
 
   def create
@@ -47,7 +46,6 @@ class PostsController < ApplicationController
     end
     redirect_to user_posts_path(user)
   end
-
 
   private
 
