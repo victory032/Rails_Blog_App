@@ -7,10 +7,10 @@
   <% end %>
   <div class='create-post'>
     <%= form_with model: @post, url: user_posts_path, method: :post, data: { turbo: false } do |form| %>
-      <%= form.label :title, 'Title' %>
-      <%= form.text_field :title %>
-      <%= form.label :text, 'Text' %>
-      <%= form.text_area :text %>
+      <%= form.label :title, 'Title', class: 'post_label' %>
+      <%= form.text_field :title, class: 'post_title' %>
+      <%= form.label :text, 'Text', class: 'post_label' %>
+      <%= form.text_area :text, class: 'post_textarea' %>
       <%= form.submit %>
     <% end %>
   </div>

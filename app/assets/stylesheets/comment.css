@@ -1,7 +1,7 @@
 .comment-form {
   margin-top: 2rem;
   width: 70%;
-  background-color: #f7f7f7;
+  background-color: #9fa8a3;
   border: 1px solid #ccc;
   border-radius: 5px;
   padding: 20px;
@@ -24,12 +24,17 @@
 
 .comment-form__textarea {
   display: block;
+  background-color: #eee;
   width: 100%;
   height: 100px;
   padding: 10px;
   border: 1px solid #ccc;
   border-radius: 5px;
   resize: vertical;
+}
+
+.comment-form__textarea:focus {
+  outline: none;
 }
 
 .actions {
