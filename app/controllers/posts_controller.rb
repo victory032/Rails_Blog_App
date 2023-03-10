@@ -38,7 +38,7 @@ class PostsController < ApplicationController
   def destroy
     user = current_user
     @post = Post.find_by(id: params[:id], author_id: params[:user_id])
-    @post .comments.destroy_all
+    @post.comments.destroy_all
     @post.likes.destroy_all
 
     if @post.destroy
