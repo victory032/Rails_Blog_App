@@ -10,7 +10,6 @@ class Api::V1::CommentsController < ApplicationController
 
   def create
     post = Post.find(params[:post_id])
-    author = post.author
     @comment = Comment.new(comment_params)
     @comment.post = post
     @comment.author = current_user
@@ -24,8 +23,6 @@ class Api::V1::CommentsController < ApplicationController
 
   def destroy
     @comment = Comment.find(params[:id])
-    author = @comment.post.author
-    post = @comment.post
 
     if @comment.destroy
       render json: { message: 'Comment deleted' }, status: :ok

@@ -1,6 +1,6 @@
 class Api::V1::PostsController < ApplicationController
-  before_action :set_user, only: [:index, :show, :create, :destroy]
-  before_action :set_post, only: [:show, :destroy]
+  before_action :set_user, only: %i[index show create destroy]
+  before_action :set_post, only: %i[show destroy]
 
   PER_PAGE = 3
 
@@ -13,7 +13,7 @@ class Api::V1::PostsController < ApplicationController
     if @post
       render json: @post
     else
-      render json: { error: "Post not found" }, status: :not_found
+      render json: { error: 'Post not found' }, status: :not_found
     end
   end
 
@@ -26,16 +26,16 @@ class Api::V1::PostsController < ApplicationController
     if @post.save
       render json: @post, status: :created
     else
-      render json: { error: "Post creation failed" }, status: :unprocessable_entity
+      render json: { error: 'Post creation failed' }, status: :unprocessable_entity
     end
   end
 
   def destroy
     authorize! :destroy, @post
     if @post.destroy
-      render json: { message: "Post deleted" }, status: :ok
+      render json: { message: 'Post deleted' }, status: :ok
     else
-      render json: { error: "Post deletion failed" }, status: :unprocessable_entity
+      render json: { error: 'Post deletion failed' }, status: :unprocessable_entity
     end
   end
 
