@@ -6,8 +6,8 @@ RSpec.describe Comment, type: :model do
     it { should belong_to(:post) }
   end
 
-  describe 'update_post_likes_counter' do
-    let!(:user) { User.create!(name: 'John Doe', post_counter: 0) }
+  describe 'update_post_comments_counter' do
+    let!(:user) { User.create!(name: 'John Doe', email: 'jhone@doe.com', password: '123456', post_counter: 0) }
     let!(:post) { Post.create!(title: 'My First Post', author: user, comments_counter: 0, likes_counter: 0) }
     let!(:comment) { Comment.new(author: user, post:) }
 
