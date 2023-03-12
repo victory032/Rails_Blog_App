@@ -1,7 +1,7 @@
 require 'rails_helper'
 
 RSpec.describe Post, type: :model do
-  let(:user) { User.create(name: 'John Doe', post_counter: 0) }
+  let(:user) { User.create(name: 'John Doe', email: 'john@doe.com', password: '123456', post_counter: 0) }
 
   describe 'associations' do
     it { should belong_to(:author).class_name('User').inverse_of(:posts) }
