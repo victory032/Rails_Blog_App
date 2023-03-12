@@ -13,7 +13,7 @@ RSpec.describe User, type: :model do
   end
 
   describe '#recent_posts' do
-    let(:user) { User.create!(name: 'Alice', post_counter: 0) }
+    let(:user) { User.create!(name: 'Alice', email: 'alice@gmail.com', password: '123456', post_counter: 0) }
 
     it 'returns all posts if the specified limit is greater than or equal to the total number of posts' do
       post1 = user.posts.create!(title: 'Post 1', text: 'Body 1', comments_counter: 0, likes_counter: 0,
